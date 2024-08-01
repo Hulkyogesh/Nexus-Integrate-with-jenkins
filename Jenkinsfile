@@ -20,7 +20,7 @@ pipeline {
                 script{
 
                     def mavenPom = readMavenPom file: 'pom.xml'
-                    def nexusRepoName = mavenPom.version.endsWith("SNAPSHOT") ? "demo-snapshot" : "demo-release"
+                    def nexusRepoName = mavenPom.version.endsWith("SNAPSHOT") ? "/Nexus-Integrate-snapshot" : "Nexus-Integrate-release"
                      def warFileName = sh(
                         script: "ls target/*.war | xargs -n 1 basename",
                         returnStdout: true
@@ -35,7 +35,7 @@ pipeline {
                     ], 
                     credentialsId: 'nexuscred', 
                     groupId: 'com.techworldwithmurali', 
-                    nexusUrl: '13.234.76.245:8081', 
+                    nexusUrl: '65.1.95.151:8081', 
                     nexusVersion: 'nexus3', 
                     protocol: 'http', 
                     repository: nexusRepoName, 
