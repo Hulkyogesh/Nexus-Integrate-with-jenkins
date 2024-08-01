@@ -30,7 +30,7 @@ pipeline {
                          [
                             artifactId: 'web-application', 
                             classifier: '', 
-                            file: "target/simple-app-${mavenPom.version}.war", 
+                            file: "target/web-application-${mavenPom.version}.war", 
                             type: 'war'
                         ]
                     ], 
