@@ -20,7 +20,7 @@ pipeline {
                 script{
 
                     def mavenPom = readMavenPom file: 'pom.xml'
-                    def nexusRepoName = mavenPom.version.endsWith("RELEASE") ? "/Nexus-Integrate-snapshot" : "Nexus-Integrate-release"
+                    def nexusRepoName = mavenPom.version.endsWith("RELEASES") ? "Nexus-Integrate-snapshot" : "Nexus-Integrate-release"
                      def warFileName = sh(
                         script: "ls target/*.war | xargs -n 1 basename",
                         returnStdout: true
