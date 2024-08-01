@@ -30,7 +30,7 @@ pipeline {
                          [
                             artifactId: 'web-application', 
                             classifier: '', 
-                            file: "target/*.war", 
+                            file: "target/${warFileName}", 
                             type: 'war'
                         ]
                     ], 
